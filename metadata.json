@@ -1,0 +1,8 @@
+{
+  "name": "Craigslist Refined",
+  "description": "A modern, high-fidelity redesign of Craigslist maintaining its high information density, rapid navigation, and visual hierarchy using Tailwind CSS.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}

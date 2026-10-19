@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Craigslist Refined</title>
+    <meta name="description" content="A modern, high-fidelity redesign of Craigslist maintaining its high information density, rapid navigation, and visual hierarchy using Tailwind CSS." />
+    <meta property="og:title" content="Craigslist Refined" />
+    <meta property="og:description" content="A modern, high-fidelity redesign of Craigslist maintaining its high information density, rapid navigation, and visual hierarchy using Tailwind CSS." />
+    <link rel="icon" type="image/x-icon" href="https://www.craigslist.org/favicon.ico" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      .leaflet-control-attribution,
+      .leaflet-control-container .leaflet-control-attribution,
+      .leaflet-bottom.leaflet-right .leaflet-control-attribution {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+      }
+      /* Custom map pins styling */
+      .custom-price-marker {
+        background: transparent !important;
+        border: none !important;
+      }
+      .custom-continent-marker {
+        background: transparent !important;
+        border: none !important;
+      }
+      .custom-pin {
+        background: transparent !important;
+        border: none !important;
+      }
+      /* Hide scrollbars for clean tag rows */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+
+    <script>
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+              serif: ['"Times New Roman"', 'Times', 'serif'],
+            },
+            colors: {
+              brand: {
+                50: '#fdf4ff',
+                100: '#fae8ff',
+                200: '#f5d0fe',
+                300: '#f0abfc',
+                400: '#e879f9',
+                500: '#d946ef',
+                600: '#800080', // Classic Craigslist Purple
+                700: '#6b006b',
+                800: '#580058',
+                900: '#420042',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#fcfcfc] dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased font-sans selection:bg-purple-100 selection:text-purple-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
